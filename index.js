@@ -1,50 +1,103 @@
-const nums1 = document.getElementById("num1");
-const nums2 = document.getElementById("num2");
-const output = document.getElementById("output");
+// ReactDOM.createRoot(document.getElementById("root")).render(
+        //     React.createElement("div", {}, "Hello React Learners(React)")
+        // );
+{/* <div id="outer">
+    <div id="inner1">
+        <div id="span-container">
+            <span>
+                span 1
+            </span>
+            <span>
+                span 2
+            </span>
+        </div>
+    </div>
+    <div id="inner2">
+        <div id="span-container">
+            <span>
+                span 1
+            </span>
+            <span>
+                span 2
+            </span>
+        </div>
+    </div>
+    <div id="inner3">
+        <div id="span-container">
+            <span>
+                span 1
+            </span>
+            <span>
+                span 2
+            </span>
+        </div>
+    </div>
+</div> */}
 
-// Input validation function
-function validateInputs() {
-    if (nums1.value === "" || nums2.value === "") {
-        output.innerHTML = "Please enter both numbers";
-        output.style.color = "red";
-        return false;
-    }
-    output.style.color = "black";
-    return true;
-}
 
-// Arithmetic functions
-function add() {
-    if (!validateInputs()) return;
-    const result = Number(nums1.value) + Number(nums2.value);
-    output.innerHTML = "Result: " + result;
-}
-
-function sub() {
-    if (!validateInputs()) return;
-    const result = Number(nums1.value) - Number(nums2.value);
-    output.innerHTML = "Result: " + result;
-}
-
-function mul() {
-    if (!validateInputs()) return;
-    const result = Number(nums1.value) * Number(nums2.value);
-    output.innerHTML = "Result: " + result;
-}
-
-function div() {
-    if (!validateInputs()) return;
-    if (Number(nums2.value) === 0) {
-        output.innerHTML = "Cannot divide by zero";
-        output.style.color = "red";
-        return;
-    }
-    const result = Number(nums1.value) / Number(nums2.value);
-    output.innerHTML = "Result: " + result;
-}
-
-// Link buttons to functions
-document.getElementById("addBtn").addEventListener("click", add);
-document.getElementById("subBtn").addEventListener("click", sub);
-document.getElementById("mulBtn").addEventListener("click", mul);
-document.getElementById("divBtn").addEventListener("click", div);
+// const reactElement= React.createElement("div",{id:"outer"},
+//     [React.createElement("div",{id:"inner1"},
+//         React.createElement("div",{id:"span-container"},
+//             [React.createElement("span",{}, "span 1"),
+//                React.createElement("span",{}, "span 2")
+//             ] 
+//         )
+//     ),
+//     React.createElement("div",{id:"inner2"},
+//         React.createElement("div",{id:"span-container"},
+//             [React.createElement("span",{}, "span 1"),
+//                React.createElement("span",{}, "span 2")
+//             ] 
+//         )
+//     ),
+//     React.createElement("div",{id:"inner3"},
+//         React.createElement("div",{id:"span-container"},
+//             [React.createElement("span",{}, "span 1"),
+//                React.createElement("span",{}, "span 2")
+//             ] 
+//         )
+//     )]
+// );
+const span1Content= "span-1";
+const reactElement2= <div>Header</div>;
+console.log(typeof reactElement2);
+// const divStyle= {
+//     backgroundColor: "lightblue",
+//     border: "2px solid black",
+// };
+const reactElement=<div id="outer" style={{backgroundColor: "lightblue", border: "2px solid black"}}>
+    {reactElement2}
+    <div id="inner1">
+        <div id="span-container">
+            <span className="span-1">
+                {span1Content}
+            </span>
+            <span className="span-1">
+                span 2
+            </span>
+        </div>
+    </div>
+    <div id="inner2">
+        <div id="span-container">
+            <span>
+                span 1
+            </span>
+            <span>
+                span 2
+            </span>
+        </div>
+    </div>
+    <div id="inner3">
+        <div id="span-container">
+            <span>
+                span 1
+            </span>
+            <span>
+                span 2
+            </span>
+        </div>
+    </div>
+</div>
+const root= ReactDOM.createRoot(document.getElementById("root"));
+//const divElement= React.createElement("div", {}, "Hello React Learners(React)");
+root.render(reactElement);

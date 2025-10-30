@@ -3,26 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>React with Babel</title>
+    <style>
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0052a3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Calculator</h1>
-    <main>
-        <samp id="error"></samp>
-        <br><br>
-        <input type="number" id="num1" placeholder="Enter first number">
-        <label for="num1">Input 1</label>
-        <br><br>
-        <input type="number" id="num2" placeholder="Enter second number">   
-        <label for="num2">Input 2</label>
-        <br><br>
-        <div id="output"></div>
-        <br>
-        <input type="button" value="ADD" id="addBtn">
-        <input type="button" value="SUB" id="subBtn">
-        <input type="button" value="MUL" id="mulBtn">  
-        <input type="button" value="DIV" id="divBtn">
-    </main>
-    <script src="index.js"></script>
+    <div id="root"></div>
+
+    <!-- React and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Our React code -->
+    <script type="text/babel" src="index.js"></script>
 </body>
 </html>
